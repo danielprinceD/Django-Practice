@@ -19,5 +19,6 @@ from django.urls import path , include
 from DjangoApp.views import homepage
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',homepage)
+    path('',homepage),
+    path('/DjangoApp',include('DjangoApp.urls'))
 ]

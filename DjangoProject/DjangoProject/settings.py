@@ -48,13 +48,17 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+import os
 ROOT_URLCONF = 'DjangoProject.urls'
+
+Project = os.path.dirname(os.path.dirname(__file__))
+Template = os.path.join(Project,"templates")
+
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [Template],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

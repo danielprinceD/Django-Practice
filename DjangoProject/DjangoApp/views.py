@@ -8,5 +8,5 @@ def say_hello(request) :
     return HttpResponse("<h1> HelloWord from Django App</h1>");
 
 def say_hello_dynamic(request):
-    return render(request,'template\hello.html',{'name' : 'daniel'})
+    return render(request,'hello.html',context={ "name" : "daniel"})
 
