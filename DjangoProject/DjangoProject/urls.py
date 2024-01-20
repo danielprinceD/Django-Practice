@@ -20,5 +20,6 @@ from DjangoApp.views import homepage
 urlpatterns = [
     path('',homepage),
     path('admin/', admin.site.urls),
-    path('DjangoApp/',include('DjangoApp.urls'))
+    path('DjangoApp/',include('DjangoApp.urls')),
+    path('product/',include('Products.urls'))
 ]

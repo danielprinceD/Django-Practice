@@ -1,7 +1,6 @@
 from django.db import models
 
 # Create your models here.
-
-class Product(models.Model):
+class Products(models.Model):
     name = models.TextField()
-    price = models.IntegerField()
+    prize = models.IntegerField()
