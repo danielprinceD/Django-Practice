@@ -1,10 +1,22 @@
 {% extends 'base.html' %}{% block content %}
-<center>
+<div
+  style="
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: royalblue;
+    color: white;
+    width: 40%;
+    height: 50%;
+    padding: 50px 75px;
+    gap: 5px;
+    overflow: auto;
+  "
+>
   <h1>Product Details</h1>
   {%if object%} {%for i in object%}
 
-  <h2>{{i.name}} --- {{i.prize}}</h2>
+  <h2>{{i.id}} ) {{i.name}} --- {{i.prize}}</h2>
 
   {% endfor %} {% endif %} {% endblock %}
-  <center></center>
-</center>
+</div>

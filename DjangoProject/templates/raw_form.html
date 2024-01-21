@@ -1,0 +1,12 @@
+{% extends 'base.html' %}{% block content %}
+<center>
+  <h1>Raw Product Form</h1>
+  <form method="POST">
+    {% csrf_token %} {{raw_form.as_p}}<input
+      value="Add Product"
+      type="submit"
+    />
+  </form>
+  <center></center>
+</center>
+{% endblock %}
