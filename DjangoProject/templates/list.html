@@ -17,6 +17,14 @@
 >
   <h1>Product Details</h1>
   {%if object%} {%for i in object%}
-  <h2>>>> {{i.name}} --- {{i.prize}}</h2>
+  <h2>
+    >>> {{i.name}} --- {{i.prize}}
+    <a
+      href="/product/id/{{i.id}}"
+      style="color: red; padding: 9px; text-decoration: none"
+    >
+      View</a
+    >
+  </h2>
   {% endfor %} {% endif %} {% endblock %}
 </div>

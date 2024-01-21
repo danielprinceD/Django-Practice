@@ -29,7 +29,7 @@ def view_product(request,my_id):
     form = ProductForm( request.POST or None ,  instance=obj)
     if form.is_valid():
         form.save()
-        form = ProductForm()
+        return redirect('/product/list')
     return render(request,'product_id.html',{"id":form,"j" : 1})
 
 def delete_product(request,my_id):
