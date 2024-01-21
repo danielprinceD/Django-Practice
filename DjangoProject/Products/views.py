@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect,get_object_or_404
 # Create your views here.
 from .forms import ProductForm,RawProductForm
 from .models import Products
@@ -30,4 +30,11 @@ def view_product(request,my_id):
     if form.is_valid():
         form.save()
         form = ProductForm()
-    return render(request,'product_id.html',{"id":form})
+    return render(request,'product_id.html',{"id":form,"j" : 1})
+
+def delete_product(request,my_id):
+    obj = get_object_or_404(Products,id=my_id)
+    if request.method=="POST":
+        obj.delete()
+        return redirect('/product/list')
+    return render(request,'delete_id.html',context={"id":obj})

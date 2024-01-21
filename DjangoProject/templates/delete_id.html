@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% block content %}
+<center>
+  <form method="POST">
+    {% csrf_token %}
+    <h2>Product</h2>
+    <h3>Name : {{id.name}}</h3>
+    <h3>Prize : {{id.prize}}</h3>
+    <input type="submit" value="Delete" />
+  </form>
+</center>
+{% endblock %}
