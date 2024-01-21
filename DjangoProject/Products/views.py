@@ -23,3 +23,7 @@ def raw_product_form(request):
         raw_form = RawProductForm()
     
     return render(request,'raw_form.html',{"raw_form":raw_form})
+
+def view_product(request,my_id):
+    obj = Products.objects.get(id=my_id)
+    return render(request,'product_id.html',{"id":obj})
