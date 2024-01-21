@@ -10,7 +10,7 @@ def product_form(request):
     form = ProductForm(request.POST or None)
     if form.is_valid():
         form.save()
-        form = ProductForm()
+        return redirect('/product/list')
     return render(request,'ProductForm.html',context={'form':form})
 
 def list_product(request):
