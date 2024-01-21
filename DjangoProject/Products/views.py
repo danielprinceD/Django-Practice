@@ -26,4 +26,8 @@ def raw_product_form(request):
 
 def view_product(request,my_id):
     obj = Products.objects.get(id=my_id)
-    return render(request,'product_id.html',{"id":obj})
+    form = ProductForm( request.POST or None ,  instance=obj)
+    if form.is_valid():
+        form.save()
+        form = ProductForm()
+    return render(request,'product_id.html',{"id":form})
