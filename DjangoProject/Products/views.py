@@ -3,6 +3,9 @@ from django.shortcuts import render,redirect,get_object_or_404
 from .forms import ProductForm,RawProductForm
 from .models import Products
 
+def product(request):
+    return redirect("/product/list")
+
 def product_form(request):
     form = ProductForm(request.POST or None)
     if form.is_valid():
