@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <title>List Application</title>
+  </head>
+  <style>
+    body {
+      border: 0px;
+    }
+    .nav-container {
+      border-radius: 10px;
+      background: royalblue;
+      display: flex;
+      gap: 100px;
+      justify-conten: center;
+      justify-content: center;
+      padding: 25px 40px;
+      position: sticky;
+      top: 0px;
+    }
+    a {
+      font-size: 30px;
+      text-decoration: none;
+      color: white;
+    }
+  </style>
+  <body>
+    <div class="nav-container">
+      <a href="#">Home</a>
+      <a href="/User/Login">Login</a>
+      <a href="/User/Register">Register</a>
+    </div>
+    <div class="content">{% block content %} {% endblock %}</div>
+  </body>
+</html>
