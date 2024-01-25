@@ -1,3 +1,5 @@
-{% extends 'base.html'%} {% block content %} {% for instance in object_list %}
+{% extends 'base.html'%} {% block content %}
+<h1>List of Students</h1>
+{% for instance in object_list %}
 <h3>{{instance.id}} -> {{instance.name}} ------- {{instance.roll}}</h3>
 {% endfor %} {% endblock %}

@@ -20,11 +20,14 @@
         justify-content: center;
         background: #f3ca20;
         top: 0px;
+        border: none;
+        border-radius: 0px 0px 20px 20px;
       }
       body {
         border-radius: 0px;
         background: black;
         color: white;
+        margin: 0px;
       }
       .left,
       .right {
@@ -52,6 +55,12 @@
       .right {
         border-radius: 90% 50%;
       }
+      .content-container {
+        padding: 50px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
     </style>
   </head>
   <body>
@@ -59,9 +68,7 @@
       <button class="left">Login</button>
       <button class="right">Logout</button>
     </div>
-    <h1>List of Students</h1>
-    {% block content %} {% endblock %}
-
+    <div class="content-container">{% block content %} {% endblock %}</div>
     <script src="" async defer></script>
   </body>
 </html>
