@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'FirstClassApp'
 ]
 
 MIDDLEWARE = [
@@ -50,11 +51,14 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'ClassBasedView.urls'
-
+import os 
+TEMPLATE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+print(TEMPLATE_DIR)
+DIR_PATH = os.path.join(TEMPLATE_DIR,'template')
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [DIR_PATH],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
