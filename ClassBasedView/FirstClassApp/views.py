@@ -3,5 +3,5 @@ from .models import Student
 from django.views.generic import ListView
 
 class StudentList(ListView):
-    model = Student
+    queryset = Student.objects.all()
         

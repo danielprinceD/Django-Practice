@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>first Class Based App</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+    <style>
+      .head-container {
+        position: relative;
+        display: flex;
+        gap: 10%;
+        padding: 50px;
+        justify-content: center;
+        background: #f3ca20;
+        top: 0px;
+      }
+      body {
+        border-radius: 0px;
+      }
+      .left,
+      .right {
+        font-size: 20px;
+        padding: 10px 35px;
+        border: none;
+        transition: 1s;
+        font-weight: bold;
+      }
+      .left:hover,
+      .right:hover {
+        cursor: pointer;
+        background: grey;
+        transition: 0.9s;
+      }
+      .left:hover {
+        border-radius: 90% 50%;
+      }
+      .right:hover {
+        border-radius: 50% 90%;
+      }
+      .left {
+        border-radius: 50% 90%;
+      }
+      .right {
+        border-radius: 90% 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="head-container">
+      <button class="left">Login</button>
+      <button class="right">Logout</button>
+    </div>
+    <h1>List of Students</h1>
+    {% block content %} {% endblock %}
+
+    <script src="" async defer></script>
+  </body>
+</html>
