@@ -16,7 +16,7 @@ def hello(request):
         serialized_data = ProductSerializer(instance).data
     return Response(serialized_data)
 
-
+@api_view(["GET"])
 def view_all(request,my_id):
     all_data_instance = get_object_or_404(Product,id=my_id)
     if all_data_instance:
@@ -26,7 +26,7 @@ def view_all(request,my_id):
 @api_view(["POST"])
 def post_data(request):
     serializer = ProductSerializer(data = request.data)
-    if serializer.is_valid():
+    if serializer.is_valid(raise_exception=True):
         print(serializer.data)
         data = serializer.data
         return Response(data)
