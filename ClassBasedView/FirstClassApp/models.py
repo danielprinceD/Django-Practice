@@ -6,6 +6,6 @@ class Student(models.Model):
     roll = models.IntegerField()
     
     def get_absolute_url(self):
-        return reverse("DetailView", kwargs={"id": self.id})
+        return reverse("ListView")
      
     

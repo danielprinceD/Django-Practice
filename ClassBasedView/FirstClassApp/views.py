@@ -3,7 +3,8 @@ from .models import Student
 from django.views.generic import(
     ListView,
     DetailView,
-    CreateView
+    CreateView,
+    UpdateView
 )
 from .forms import StudentForm
 class StudentList(ListView):
@@ -20,4 +21,11 @@ class StudentCreate(CreateView):
     template_name = 'FirstClassApp/student_create.html'
     querset = Student.objects.all()
     
+class StudentUpdate(UpdateView):
+    form_class = StudentForm
+    template_name = 'FirstClassApp/student_create.html'
     
+    
+    def get_object(self):
+        id_ = self.kwargs.get("id")
+        return get_object_or_404(Student,id=id_)
