@@ -3,7 +3,9 @@ from .models import Product
 from .serializer import ProductSerializer
 from rest_framework.generics import (
     RetrieveAPIView,
-    CreateAPIView
+    CreateAPIView,
+    ListCreateAPIView,
+    ListAPIView
 ) 
 class ProductDetail(RetrieveAPIView):
     queryset = Product.objects.all()
@@ -16,4 +18,9 @@ class ProductDetail(RetrieveAPIView):
 class ProductCreate(CreateAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+    
+class ProductListCreateAPIView(ListCreateAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+    
     
