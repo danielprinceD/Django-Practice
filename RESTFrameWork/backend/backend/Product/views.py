@@ -5,8 +5,11 @@ from rest_framework.generics import (
     RetrieveAPIView,
     CreateAPIView,
     ListCreateAPIView,
-    ListAPIView
+    ListAPIView,
+    UpdateAPIView,
+    DestroyAPIView
 ) 
+from django.urls import reverse
 class ProductDetail(RetrieveAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
@@ -22,5 +25,18 @@ class ProductCreate(CreateAPIView):
 class ProductListCreateAPIView(ListCreateAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+    
+class ProductListAPI(ListAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+    
+class ProductUpdateAPI(UpdateAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+    
+class ProductDestroyAPI(DestroyAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+    
     
     
