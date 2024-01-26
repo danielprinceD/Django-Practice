@@ -37,6 +37,9 @@ class ProductUpdateAPI(UpdateAPIView):
 class ProductDestroyAPI(DestroyAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+    def get_object(self):
+        id_ = self.kwargs.get("id")
+        return get_object_or_404(Product,id=id_)
     
     
     
