@@ -7,8 +7,10 @@ from rest_framework.generics import (
     ListCreateAPIView,
     ListAPIView,
     UpdateAPIView,
-    DestroyAPIView
+    DestroyAPIView,
+    GenericAPIView,
 ) 
+from rest_framework import mixins
 from django.urls import reverse
 class ProductDetail(RetrieveAPIView):
     queryset = Product.objects.all()
@@ -40,6 +42,12 @@ class ProductDestroyAPI(DestroyAPIView):
     def get_object(self):
         id_ = self.kwargs.get("id")
         return get_object_or_404(Product,id=id_)
-    
-    
+
+class ProductMixins(mixins.ListModelMixin,GenericAPIView):
+    queryset = Product.objects.all()
+    serializer = ProductSerializer
+    def get(self,request):
+        return self.list(request)
+
+product_mixin_generic_view = ProductMixins.as_view()
     
