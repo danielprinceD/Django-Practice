@@ -15,5 +15,6 @@ urlpatterns = [
      path('ListAPI',ProductListAPI.as_view()),
      path('Update/<int:pk>',ProductUpdateAPI.as_view()),
      path("Destroy/<int:id>",ProductDestroyAPI.as_view()),
-     path('list_mixin',product_mixin_generic_view)
+     path('list_mixin',product_mixin_generic_view),
+     path('retrieve_mixin/<int:pk>',product_mixin_generic_view)
 ]

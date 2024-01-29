@@ -43,10 +43,13 @@ class ProductDestroyAPI(DestroyAPIView):
         id_ = self.kwargs.get("id")
         return get_object_or_404(Product,id=id_)
 
-class ProductMixins(mixins.ListModelMixin,GenericAPIView):
+class ProductMixins(mixins.ListModelMixin,GenericAPIView,mixins.RetrieveModelMixin):
     queryset = Product.objects.all()
-    serializer = ProductSerializer
-    def get(self,request):
+    serializer_class = ProductSerializer
+    def get(self,request,*args,**kwargs):
+        id = kwargs.get('pk')
+        if id is not None:
+             return self.retrieve(request ,*args,**kwargs)
         return self.list(request)
 
 product_mixin_generic_view = ProductMixins.as_view()
