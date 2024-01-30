@@ -49,7 +49,7 @@ class ProductMixins(mixins.ListModelMixin,
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
     authentication_classes = [authentication.SessionAuthentication]
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    permission_classes = [permissions.DjangoModelPermissions]
     lookup_field  = 'id'
     def get(self,request,*args,**kwargs):
         id = kwargs.get('id')
