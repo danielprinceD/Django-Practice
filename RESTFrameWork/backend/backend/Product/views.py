@@ -10,6 +10,7 @@ from rest_framework.generics import (
     DestroyAPIView,
     GenericAPIView,
 ) 
+from .permissions import Staff_Permissions
 from rest_framework import mixins , permissions ,authentication
 from django.urls import reverse
 class ProductDetail(RetrieveAPIView):
@@ -49,7 +50,7 @@ class ProductMixins(mixins.ListModelMixin,
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
     authentication_classes = [authentication.SessionAuthentication]
-    permission_classes = [permissions.DjangoModelPermissions]
+    permission_classes = [Staff_Permissions]
     lookup_field  = 'id'
     def get(self,request,*args,**kwargs):
         id = kwargs.get('id')
