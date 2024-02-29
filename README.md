@@ -1,5 +1,5 @@
 ### Website Link
-https://danielprinced.pythonanywhere.com
+https://danielprinced.pythonanywhere.com/product/list
 
 ##Product Display Application
 Django is a Python Framework which is usesfull in large organizations to develop the web applications.
