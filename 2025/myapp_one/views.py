@@ -7,6 +7,7 @@ def say_hello(request):
     return hello_obj
 
 def say_hello_with_template(request):
+    x = 10 
     return render(request , 'hello.html' ,  {
         'name' : 'Daniel Prince D'
     })
